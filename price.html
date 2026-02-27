@@ -1,212 +1,98 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Прайс-лист - Стройматериалы</title>
+    <title>Прайс-лист</title>
     <style>
         /* ВНЕДРЕННАЯ ТАБЛИЦА СТИЛЕЙ */
         
-        /* Название фирмы - заголовок пятого уровня */
+        /* Название фирмы */
         h5 {
             text-align: center;
             color: yellow;
-            background-color: #2c3e50;
-            padding: 15px;
-            font-size: 24px;
-            margin: 0 0 20px 0;
-            letter-spacing: 2px;
         }
         
-        /* Общие стили */
+        /* Основной текст */
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 20px;
+            color: purple;
+            font-weight: bold;
+            font-size: larger;
         }
         
         p {
             text-align: justify;
-            color: purple;
-            font-weight: bold;
-            font-size: larger;
-            line-height: 1.6;
         }
         
-        a {
-            color: #e67e22;
-            font-weight: bold;
-            text-decoration: none;
-            padding: 5px 10px;
-            transition: 0.3s;
-        }
-        
-        a:hover {
-            color: white;
-            background-color: #e67e22;
-            border-radius: 5px;
-        }
-        
-        /* Стили для контейнера с логотипом */
-        .content-with-logo {
-            overflow: auto;
+        /* Стили для таблицы */
+        table {
+            border: 3px solid black;        /* рамка 3 пикселя */
+            border-spacing: 3px;             /* расстояние между ячейками 3 */
+            margin-left: auto;                /* выравнивание по правому краю */
+            margin-right: 0;
             background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
         }
         
-        .logo {
-            float: left;
-            margin-right: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        /* Заголовки таблицы */
+        th {
+            background-color: aquamarine;    /* цвет заголовков аквамарин */
+            border: 3px solid black;
+            padding: 5px;
         }
         
-        /* 3. Стили для таблицы (по заданию) */
-        .price-table {
-            width: 80%;
-            margin-left: auto;
-            margin-right: 0; /* выравнивание по правому краю */
-            border: 3px solid #333; /* толщина рамки 3 пикселя */
-            border-collapse: separate; /* для работы border-spacing */
-            border-spacing: 3px; /* расстояние между границами ячеек равно 3 */
-            background-color: white;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        /* Ячейки таблицы */
+        td {
+            border: 3px solid black;
+            padding: 5px;
         }
         
-        .price-table th {
-            background-color: aquamarine; /* цвет заголовков - аквамарин */
-            font-weight: bold;
-            font-size: 18px;
-            padding: 12px;
-            border: 3px solid #333;
-            text-align: center;
-        }
-        
-        .price-table td {
-            padding: 10px;
-            border: 3px solid #333;
-            text-align: center;
-            font-weight: bold;
-        }
-        
-        /* Чередование цвета строк для удобства чтения */
-        .price-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        
-        .price-table tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
-        
-        /* Стили для навигации */
-        .navigation {
-            margin-top: 30px;
-            padding: 15px;
-            background-color: #34495e;
-            text-align: center;
-            border-radius: 8px;
-            clear: both;
-        }
-        
-        .navigation a {
-            color: white;
-            margin: 0 15px;
-        }
-        
-        /* Заголовок таблицы */
-        .table-caption {
-            font-size: 20px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            text-align: right;
+        /* Стили для списка */
+        ol {
+            list-style-type: decimal;
         }
     </style>
 </head>
 <body>
 
-    <h5>Строительный магазин "МАСТЕР"</h5>
+    <h5>Строительный магазин "Мастер"</h5>
 
-    <div class="content-with-logo">
-        <img src="https://via.placeholder.com/150x150/2c3e50/ffffff?text=Мастер" 
-             alt="Логотип" 
-             class="logo" 
-             width="150" 
-             height="150">
-        
-        <p>
-            Уважаемые покупатели! Здесь представлены актуальные цены 
-            на наши строительные материалы. Все цены указаны в рублях 
-            и включают НДС. Для постоянных клиентов действуют скидки!
-        </p>
-    </div>
+    <img src="logo.png" alt="Логотип" width="150" height="150">
 
-    <div class="table-caption">Прайс-лист на строительные материалы</div>
-    
-    <table class="price-table">
+    <p>
+        Уважаемые покупатели! Предлагаем вам ознакомиться с нашими ценами.
+    </p>
+
+    <!-- Прайс-лист в виде таблицы -->
+    <table>
         <tr>
-            <th>Наименование материала</th>
-            <th>Единица измерения</th>
-            <th>Цена (руб.)</th>
-            <th>Наличие</th>
+            <th>Наименование товара</th>
+            <th>Цена (руб)</th>
         </tr>
         <tr>
-            <td>Цемент М500</td>
-            <td>мешок 50 кг</td>
+            <td>Цемент М500 (мешок 50 кг)</td>
             <td>450</td>
-            <td>много</td>
         </tr>
         <tr>
-            <td>Песок строительный</td>
-            <td>мешок 40 кг</td>
+            <td>Песок (мешок 40 кг)</td>
             <td>120</td>
-            <td>много</td>
         </tr>
         <tr>
-            <td>Кирпич красный полнотелый</td>
-            <td>шт</td>
+            <td>Кирпич красный (шт)</td>
             <td>25</td>
-            <td>достаточно</td>
         </tr>
         <tr>
-            <td>Гипсокартон влагостойкий</td>
-            <td>лист (2500х1200)</td>
+            <td>Гипсокартон (лист)</td>
             <td>550</td>
-            <td>мало</td>
         </tr>
         <tr>
-            <td>Профиль направляющий</td>
-            <td>шт (3 м)</td>
-            <td>180</td>
-            <td>достаточно</td>
-        </tr>
-        <tr>
-            <td>Саморезы по дереву</td>
-            <td>упаковка (200 шт)</td>
+            <td>Саморезы (упаковка)</td>
             <td>250</td>
-            <td>много</td>
-        </tr>
-        <tr>
-            <td>Краска акриловая</td>
-            <td>ведро 10 л</td>
-            <td>1850</td>
-            <td>достаточно</td>
-        </tr>
-        <tr>
-            <td>Плитка керамическая</td>
-            <td>кв. м</td>
-            <td>950</td>
-            <td>под заказ</td>
         </tr>
     </table>
 
-    <div class="navigation">
-        <a href="index.html">🏠 Главная</a>
-        <a href="services.html">🛠 Каталог товаров</a>
-    </div>
+    <!-- Ссылки на другие страницы -->
+    <p>
+        <a href="index.html">Главная</a> | 
+        <a href="services.html">Каталог товаров</a>
+    </p>
 
 </body>
 </html>
