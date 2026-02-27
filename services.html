@@ -1,70 +1,252 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Каталог товаров</title>
+    <meta charset="UTF-8">
+    <title>Каталог - Стройматериалы и услуги</title>
     <style>
         /* ВНЕДРЕННАЯ ТАБЛИЦА СТИЛЕЙ */
         
-        h5 {
-            text-align: center;
-            color: yellow;
-        }
-        
+        /* Общие стили */
         body {
-            color: purple;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        /* Заголовок первого уровня с фамилией */
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 5px;
+        }
+        
+        .student-name {
+            text-align: center;
+            color: #e67e22;
+            font-size: 20px;
             font-weight: bold;
-            font-size: larger;
+            margin-bottom: 20px;
         }
         
-        p {
-            text-align: justify;
+        /* Логотип */
+        .logo-container {
+            text-align: center;
+            margin: 20px 0;
         }
         
-        /* Стили для списка - нумерованный арабскими цифрами */
-        ol {
-            list-style-type: decimal;
+        .logo {
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
         }
         
-        /* Заголовок списка */
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Заголовки разделов */
         h2 {
+            color: #34495e;
+            border-left: 5px solid #e67e22;
+            padding-left: 15px;
+            margin-top: 30px;
+            font-size: 28px;
+        }
+        
+        /* 3. Стили для нумерованных списков - ВНЕДРЕННЫЙ СТИЛЬ */
+        /* Основной список - арабские цифры */
+        .catalog-list {
+            list-style-type: decimal; /* арабские цифры */
+            font-weight: bold;
             color: purple;
+            font-size: larger;
+            background-color: rgba(255,255,255,0.8);
+            padding: 25px 45px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #e67e22;
+        }
+        
+        .catalog-list li {
+            margin-bottom: 12px;
+            padding: 5px 10px;
+            border-bottom: 1px dashed #ccc;
+        }
+        
+        /* Стили для подсписков (чтобы было красиво) */
+        .catalog-list ul {
+            list-style-type: circle;
+            color: #2c3e50;
+            font-size: 16px;
+            font-weight: normal;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .catalog-list ul li {
+            border-bottom: none;
+            padding: 3px 0;
+        }
+        
+        /* Стили для карточек товаров */
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            flex: 1 1 200px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border-top: 5px solid #e67e22;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .service-card h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        
+        /* Навигация */
+        .navigation {
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #34495e;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .navigation a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            transition: 0.3s;
+        }
+        
+        .navigation a:hover {
+            background-color: #e67e22;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Заголовок с фамилией студента -->
-    <h2>Перечень услуг/товаров</h2>
-    <h3>Студент: Иванов И.И.</h3>  <!-- Здесь вписать свою фамилию -->
+    <h1>🏗 Строительный магазин "МАСТЕР"</h1>
+    <div class="student-name">Студент: Петров А.В. (группа ИС-21)</div> <!-- Замените на свои данные -->
 
-    <!-- Логотип -->
-    <img src="logo.png" alt="Логотип" width="150" height="150">
+    <div class="logo-container">
+        <img src="https://via.placeholder.com/200x200/2c3e50/ffffff?text=Стройка" 
+             alt="Логотип строительного магазина" 
+             class="logo" 
+             width="200" 
+             height="200">
+    </div>
 
-    <!-- Перечень товаров (нумерованный список) -->
-    <h3>Наши товары:</h3>
-    <ol>
-        <li>Сухие строительные смеси</li>
-        <li>Пиломатериалы</li>
-        <li>Кровельные материалы</li>
-        <li>Отделочные материалы</li>
-        <li>Инструменты</li>
+    <h2>📦 Наш каталог товаров:</h2>
+    <ol class="catalog-list">
+        <li><strong>Сухие строительные смеси</strong>
+            <ul>
+                <li>Цемент М400, М500</li>
+                <li>Пескобетон М300</li>
+                <li>Штукатурка гипсовая</li>
+                <li>Шпатлевка финишная</li>
+            </ul>
+        </li>
+        <li><strong>Пиломатериалы</strong>
+            <ul>
+                <li>Брус 100х100, 150х150</li>
+                <li>Доска обрезная</li>
+                <li>Вагонка</li>
+                <li>ОСБ плиты</li>
+            </ul>
+        </li>
+        <li><strong>Кровельные материалы</strong>
+            <ul>
+                <li>Металлочерепица</li>
+                <li>Профнастил</li>
+                <li>Гибкая черепица</li>
+                <li>Шифер</li>
+            </ul>
+        </li>
+        <li><strong>Отделочные материалы</strong>
+            <ul>
+                <li>Обои виниловые, флизелиновые</li>
+                <li>Краски интерьерные</li>
+                <li>Плитка керамическая</li>
+                <li>Ламинат, линолеум</li>
+            </ul>
+        </li>
     </ol>
 
-    <!-- Перечень услуг (тоже нумерованный) -->
-    <h3>Наши услуги:</h3>
-    <ol start="6">  <!-- Продолжаем нумерацию с 6 -->
-        <li>Ремонт квартир</li>
-        <li>Отделка балконов</li>
-        <li>Монтаж кровли</li>
-        <li>Доставка материалов</li>
-        <li>Консультации специалистов</li>
+    <h2>🔧 Наши услуги:</h2>
+    <ol class="catalog-list" start="5"> <!-- Продолжаем нумерацию с 5 -->
+        <li><strong>Ремонт и отделка</strong>
+            <ul>
+                <li>Косметический ремонт квартир</li>
+                <li>Капитальный ремонт</li>
+                <li>Отделка балконов</li>
+            </ul>
+        </li>
+        <li><strong>Строительные работы</strong>
+            <ul>
+                <li>Возведение стен</li>
+                <li>Монтаж кровли</li>
+                <li>Утепление фасадов</li>
+            </ul>
+        </li>
+        <li><strong>Доставка материалов</strong>
+            <ul>
+                <li>Доставка по городу</li>
+                <li>Разгрузка и подъем</li>
+            </ul>
+        </li>
+        <li><strong>Консультации специалистов</strong>
+            <ul>
+                <li>Расчет материалов</li>
+                <li>Составление сметы</li>
+                <li>Дизайн-проект</li>
+            </ul>
+        </li>
     </ol>
 
-    <!-- Ссылки на другие страницы -->
-    <p>
-        <a href="index.html">Главная</a> | 
-        <a href="price.html">Прайс-лист</a>
-    </p>
+    <h2>🔥 Специальные предложения:</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Цемент М500</h3>
+            <p>Цена: <span style="color: #e67e22; font-size: 24px;">399 ₽</span></p>
+            <p>Вместо 450 ₽</p>
+        </div>
+        <div class="service-card">
+            <h3>Грунтовка</h3>
+            <p>Цена: <span style="color: #e67e22; font-size: 24px;">299 ₽</span></p>
+            <p>Глубокая пропитка</p>
+        </div>
+        <div class="service-card">
+            <h3>Мастерок</h3>
+            <p>Цена: <span style="color: #e67e22; font-size: 24px;">99 ₽</span></p>
+            <p>В подарок при покупке</p>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <a href="index.html">🏠 Главная страница</a>
+        <a href="price.html">💰 Прайс-лист</a>
+    </div>
 
 </body>
 </html>
