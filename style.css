@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin: 20px;
+}
+
+h5 {
+    text-align: center;
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+    font-size: 24px;
+}
+
+p, address, td, li {
+    text-align: justify;
+    color: purple;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navigation {
+    margin-top: 20px;
+    text-align: center;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.logo {
+    float: left;
+    margin-right: 10px;
+}
