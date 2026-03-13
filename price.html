@@ -5,42 +5,6 @@
     <title>Прайс-лист - Стройматериалы</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        table {
-            border-width: 3px;
-            border-style: solid;
-            border-color: black;
-            border-collapse: separate;
-            border-spacing: 3px;
-            float: right;
-            margin-left: 20px;
-            margin-bottom: 20px;
-            background-color: white;
-        }
-
-        th, td {
-            border: 3px solid black;
-            padding: 8px;
-        }
-
-        th {
-            font-weight: bold;
-        }
-
-        ol {
-            list-style-type: decimal;
-            clear: both;
-            padding-top: 20px;
-        }
-
-        .content-with-logo {
-            overflow: auto;
-            margin-bottom: 20px;
-        }
-
-        .table-caption {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
@@ -55,15 +19,16 @@
             на наши строительные материалы. Все цены указаны в рублях 
             и включают НДС. Для постоянных клиентов действуют скидки!
         </p>
+        <div style="clear: both;"></div>
     </div>
 
     <div class="table-caption">Прайс-лист на строительные материалы</div>
     
-    <table class="table">
-         <tr>
-            <td colspan="4" style="text-align: center">
+    <table>
+        <tr>
+            <th colspan="4" style="text-align: center">
                 Прайс-лист
-            </td>
+            </th>
         </tr>
         <tr>
             <th>Наименование материала</th>
@@ -119,7 +84,6 @@
             <td>950</td>
             <td>под заказ</td>
         </tr>
-    
     </table>
 
     <div class="navigation">
